@@ -1,0 +1,29 @@
+{
+  "name": "breczek/manufacturers",
+  "description": "",
+  "authors": [
+    {
+      "name": "Marcin Bręczewski",
+      "email": "marcin.breczewski@breczek-koduje.pl"
+    }
+  ],
+  "require": {
+    "php": ">=8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Breczek\\Manufacturers\\": "src/"
+    },
+    "classmap": [
+      "manufacturers.php"
+    ],
+    "exclude-from-classmap": []
+  },
+  "config": {
+    "preferred-install": "dist",
+    "prepend-autoloader": false
+  },
+  "type": "prestashop-module",
+  "license": "AFL-3.0"
+}
+ 

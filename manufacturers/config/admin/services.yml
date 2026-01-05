@@ -1,0 +1,17 @@
+services:
+  _defaults:
+    public: true        
+    autowire: false
+    autoconfigure: false
+
+  Breczek\Manufacturers\Grid\ProductManufacturerGridDefinitionModifier:
+    class: 'Breczek\Manufacturers\Grid\ProductManufacturerGridDefinitionModifier'
+    public: true
+
+  Breczek\Manufacturers\Grid\ProductManufacturerGridQueryModifier:
+    class: 'Breczek\Manufacturers\Grid\ProductManufacturerGridQueryModifier'
+    public: true
+    arguments:
+      - '@doctrine.dbal.default_connection' 
+      - '%database_prefix%'
+  
