@@ -12,10 +12,7 @@ class ProductManufacturerGridQueryModifier
     private Connection $connection;
     private string $dbPrefix;
 
-    /**
-     * @param Connection $connection  Doctrine DBAL connection (z @doctrine.dbal.default_connection)
-     * @param string     $dbPrefix    Prefix tabel (z %database_prefix%)
-     */
+
     public function __construct(
         Connection $connection,
         string $dbPrefix
@@ -24,18 +21,18 @@ class ProductManufacturerGridQueryModifier
         $this->dbPrefix = $dbPrefix;
     }
 
-    /**
-     * Modyfikuje QueryBuilder siatki produktów:
-     *  - dodaje JOIN do tabeli manufacturer,
-     *  - dodaje SELECT z nazwą producenta jako "manufacturer_name".
-     */
+    /** 
+    * Modifies QueryBuilder product grids: 
+    * - adds JOIN to the manufacturer table, 
+    * - adds a SELECT with the manufacturer's name as "manufacturer_name". 
+    */
     public function modify(QueryBuilder $searchQueryBuilder, SearchCriteriaInterface $searchCriteria): void
     {
-        // alias głównej tabeli produktów – w Product Grid to zwykle "p"
+        // alias of the main product table - in Product Grid it is usually "p"
         $productAlias = 'p';
         $manufacturerTable = $this->dbPrefix . 'manufacturer';
 
-        // LEFT JOIN, aby nie wycinać produktów bez producenta
+        // LEFT JOIN to avoid cutting products without a manufacturer
         $searchQueryBuilder
             ->leftJoin(
                 $productAlias,
