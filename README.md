@@ -1,1 +1,1 @@
-Prestashop module project, his purpose is adding column to product catalog with manufactures this products
+Prestashop 9 module project, his purpose is adding column to product catalog with manufactures this products
