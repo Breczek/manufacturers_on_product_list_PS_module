@@ -2,7 +2,7 @@
 /**
  * Manufactures
  * 
- * PrestaShop 1.7+, 8 and 9 module using modern Hooks and services 
+ * PrestaShop 9 module using modern Hooks and services 
  * 
  */
 if (!defined('_PS_VERSION_')) {
@@ -26,7 +26,7 @@ class Manufacturers extends Module
         $this->need_instance = 0;
 
         $this->ps_versions_compliancy = [
-            'min' => '1.7.8',
+            'min' => '8.2',
             'max' => _PS_VERSION_,
         ];
 
