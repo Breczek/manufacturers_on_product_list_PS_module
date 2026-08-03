@@ -1,0 +1,5 @@
+# Test tooling deps (repo-root composer.json) — manufacturers/vendor/ is the
+# module's own runtime autoload and is intentionally committed, not ignored.
+/vendor/
+/composer.lock
+.phpunit.result.cache

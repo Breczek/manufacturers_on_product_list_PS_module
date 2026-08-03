@@ -12,27 +12,20 @@ class ProductManufacturerGridQueryModifier
     private Connection $connection;
     private string $dbPrefix;
 
-
-    public function __construct(
-        Connection $connection,
-        string $dbPrefix
-    ) {
+    public function __construct(Connection $connection, string $dbPrefix)
+    {
         $this->connection = $connection;
         $this->dbPrefix = $dbPrefix;
     }
 
-    /** 
-    * Modifies QueryBuilder product grids: 
-    * - adds JOIN to the manufacturer table, 
-    * - adds a SELECT with the manufacturer's name as "manufacturer_name". 
-    */
     public function modify(QueryBuilder $searchQueryBuilder, SearchCriteriaInterface $searchCriteria): void
     {
-        // alias of the main product table - in Product Grid it is usually "p"
+        // Assumes the Product Grid's base query aliases the product table as "p" —
+        // not a documented contract, so this breaks silently if core ever renames it.
         $productAlias = 'p';
         $manufacturerTable = $this->dbPrefix . 'manufacturer';
 
-        // LEFT JOIN to avoid cutting products without a manufacturer
+        // LEFT JOIN, not INNER — a product without a manufacturer must still show up.
         $searchQueryBuilder
             ->leftJoin(
                 $productAlias,

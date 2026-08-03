@@ -1,0 +1,20 @@
+{
+    "name": "breczek/manufacturers-tests",
+    "description": "Test tooling for the manufacturers module — kept separate from manufacturers/composer.json, which is the module's own runtime autoload shipped to PrestaShop.",
+    "require-dev": {
+        "phpunit/phpunit": "^11.0",
+        "doctrine/dbal": "^3.8"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Breczek\\Manufacturers\\": "manufacturers/src/",
+            "Tests\\": "tests/"
+        },
+        "classmap": [
+            "tests/Stubs/PrestaShopGridStubs.php"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}
