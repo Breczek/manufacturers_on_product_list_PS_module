@@ -45,6 +45,11 @@ Covers the column definition (position, label, `field` option) and the query mod
 SQL (join clause, select, custom table prefix) — the latter runs against a real Doctrine DBAL
 connection (SQLite, in-memory) rather than a hand-rolled stub.
 
+## Credits
+
+The test suite was written with [Claude](https://claude.com/claude-code) (Anthropic), which also
+reviewed the codebase for bugs and typos.
+
 ## License
 
 MIT — see `LICENSE`.
