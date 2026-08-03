@@ -47,4 +47,4 @@ connection (SQLite, in-memory) rather than a hand-rolled stub.
 
 ## License
 
-AFL-3.0 — see `manufacturers/composer.json`.
+MIT — see `LICENSE`.

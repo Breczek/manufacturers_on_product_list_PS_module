@@ -24,6 +24,6 @@
     "prepend-autoloader": false
   },
   "type": "prestashop-module",
-  "license": "AFL-3.0"
+  "license": "MIT"
 }
  
